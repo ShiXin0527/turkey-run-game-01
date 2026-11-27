@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Gobble Run — The Great Thanksgiving Escape: a turkey outruns Farmer Gus, leaps the ovens and ducks the cleavers to reach the forest 1,500 m away.">
+<title>Gobble Run — The Great Thanksgiving Escape</title>
+<style>
+  html, body { margin: 0; height: 100%; overflow: hidden; background: #2a1608; }
+  #game { position: fixed; inset: 0; width: 100%; height: 100%; display: block; touch-action: none; }
+  /* Read aloud, never shown: the status line screen readers announce. */
+  #status { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+  .touch-btn {
+    position: fixed; bottom: 18px; z-index: 2;
+    width: 84px; height: 84px; border-radius: 50%;
+    border: 2px solid rgba(255, 246, 229, 0.65);
+    background: rgba(24, 12, 4, 0.45); color: #fff6e5;
+    font: 700 15px system-ui, -apple-system, "Segoe UI", sans-serif;
+    display: flex; align-items: center; justify-content: center;
+    cursor: pointer; user-select: none; -webkit-user-select: none;
+    touch-action: none;
+  }
+  .touch-btn:active { background: rgba(232, 163, 60, 0.6); }
+  #btn-slide { left: 18px; }
+  #btn-jump { right: 18px; }
+</style>
+</head>
+<body>
+<canvas id="game" aria-label="Gobble Run: a turkey escapes becoming Thanksgiving dinner. Jump the ovens and fences, slide under the flying cleavers, outrun the farmer to the forest 1500 metres away."></canvas>
+<button id="btn-slide" class="touch-btn" type="button" aria-label="Slide under the cleaver">SLIDE</button>
+<button id="btn-jump" class="touch-btn" type="button" aria-label="Jump">JUMP</button>
+<p id="status" role="status" aria-live="polite"></p>
+<script type="module" src="./src/main.js"></script>
+</body>
+</html>
